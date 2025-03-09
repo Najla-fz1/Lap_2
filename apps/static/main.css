@@ -1,0 +1,42 @@
+.link-box {
+    padding: 15px;
+    text-align: center;
+    display: block;
+}
+#box1 {
+    background-color: lightgreen;
+}
+#box2 {
+    background-color: darkgray;
+}
+#box3 {
+    background-color: rgb(0, 0, 0);
+}
+.link {
+    font-size: 15px;
+    padding: 10px;
+    text-decoration: underline;
+    display: inline-block;
+}
+#link1 {
+    color: red;
+}
+
+#link2 {
+    color: yellow;
+}
+
+#link3 {
+    color: white;
+}
+.link:hover {
+    color: rgb(15, 34, 93);
+    opacity: 0.7;
+}
+.link:visited {
+    color: purple;
+}
+.link:active {
+    color: orange;
+    font-weight: bold;
+}

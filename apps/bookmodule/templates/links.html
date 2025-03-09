@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <script>
+        function showMessage() {
+            alert("You clicked a link! 🎉");
+        }
+    </script>
+</head>
+<body>
+    <div class="link-box" id="box1">
+        <a href="https://myqu.qu.edu.sa/login" target="_blank" class="link" id="link1" onclick="showMessage()">Go to QU website (open a new tab)</a>
+    </div>
+    <div class="link-box" id="box2">
+        <a href="https://myqu.qu.edu.sa/login" class="link" id="link2" onclick="showMessage()">Go to QU website (open in the same page/tab)</a>
+    </div>
+    <div class="link-box" id="box3">
+        <a href="https://myqu.qu.edu.sa/login" class="link" id="link3" onclick="showMessage()">Go to QU website (open in the same page/tab)</a>
+    </div>
+</body>
+</html>

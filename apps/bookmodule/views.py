@@ -39,3 +39,56 @@ def viewbook(request, bookId):
 def aboutus(request):
     return render(request, 'bookmodule/aboutus.html')
 
+def links_page(request):
+    return render(request, 'links.html')
+
+def text_formatting(request):
+    return render(request, 'formatting.html')
+
+def listing(request):
+    return render(request, 'listing.html')
+
+def tables(request):
+    return render(request, 'tables.html')
+
+# def search(request):
+#     return render(request, 'search.html')
+
+def __getBooksList():
+    book1 = {'id':12344321, 'title':'Continuous Delivery', 'author':'J.Humble and D. Farley'}
+    book2 = {'id':56788765,'title':'Reversing: Secrets of Reverse Engineering', 'author':'E. Eilam'}
+    book3 = {'id':43211234, 'title':'The Hundred-Page Machine Learning Book', 'author':'Andriy Burkov'}
+    return [book1, book2, book3]
+
+def search(request):
+    if request.method == "POST":
+        keyword = request.POST.get('keyword', '').lower()
+        isTitle = request.POST.get('option1')
+        isAuthor = request.POST.get('option2')
+
+        books = __getBooksList()
+        filtered_books = []
+
+        for book in books:
+            match = False
+            if isTitle and keyword in book['title'].lower():
+                match = True
+            if not match and isAuthor and keyword in book['author'].lower():
+                match = True
+            
+            if match:
+                filtered_books.append(book)
+
+        return render(request, 'bookList.html', {'books': filtered_books})
+    
+    return render(request, 'search.html')    
+
+ 
+
+
+
+
+
+
+
+

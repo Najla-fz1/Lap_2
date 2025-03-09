@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: white;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+}
+
+.link-box {
+    padding: 20px;
+    margin: 10px 0;
+    display: block;
+    text-align: center;
+}
+
+.box1 {
+    background-color: lightgreen;
+}
+
+.box2 {
+    background-color: darkgray;
+}
+
+.box3 {
+    background-color: black;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+}
+
+.red {
+    color: red;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.white {
+    color: white;
+}
+
+.link:hover {
+    opacity: 0.7;
+}
+
+.link:visited {
+    color: purple;
+}
