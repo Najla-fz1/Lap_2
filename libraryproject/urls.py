@@ -3,6 +3,7 @@ import apps.bookmodule.views
 from django.urls import include, path
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', include("apps.bookmodule.urls")), #include urls.py of bookmodule app

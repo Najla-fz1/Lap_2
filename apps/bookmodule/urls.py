@@ -16,6 +16,8 @@ urlpatterns = [
     path('html5/listing', views.listing),
     path('html5/tables', views.tables),
     path('search', views.search),
-    
+    path('add_data/', views.add_data),
+    path('simple/query/', views.simple_query),
+    path('complex/query/', views.complex_query),
 ]
 

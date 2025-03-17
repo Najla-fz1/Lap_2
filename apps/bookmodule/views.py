@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render 
+from .models import Book
+
 
 
 def index(request):
@@ -83,7 +85,30 @@ def search(request):
     
     return render(request, 'search.html')    
 
+
+def add_data(request):
+    mybook1 = Book(title='Continuous Delivery', author='J.Humble and D. Farley', edition=1)
+    mybook1.save()
+    mybook2 = Book.objects.create(title='Continuous Delivery', author='J.Humble and D. Farley', edition=1)
+    mybook2.save()
+    return HttpResponse("Data added successfully")
+
  
+def simple_query(request):
+    mybooks=Book.objects.filter(title__icontains='and')
+    return render(request, 'bookmodule/bookList.html', {'books':mybooks})
+
+
+def complex_query(request):
+    mybooks=books=Book.objects.filter(
+        author__isnull = False).filter(
+            title__icontains='and')
+    if len(mybooks)>=1:
+        return render(request, 'bookmodule/bookList.html', {'books':mybooks})
+    else:
+        return render(request, 'bookmodule/index.html')
+
+
 
 
 
