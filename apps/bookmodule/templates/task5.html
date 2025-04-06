@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Aggregation Statistics</title>
+</head>
+<body>
+    <h1>Book Statistics</h1>
+    <ul>
+        <li>Number of Books: {{ aggregation.count }}</li>
+        <li>Total Price of All Books: ${{ aggregation.total_price }}</li>
+        <li>Average Price: ${{ aggregation.average_price }}</li>
+        <li>Maximum Price: ${{ aggregation.max_price }}</li>
+        <li>Minimum Price: ${{ aggregation.min_price }}</li>
+    </ul>
+</body>
+</html>
