@@ -112,7 +112,7 @@ def complex_query(request):
     
 
 def task1(request):
-    mybooks = Book.objects.filter(Q(price__lt=80) | Q(price__lte=80))
+    mybooks = Book.objects.filter(Q(price__lt=80) | Q(price=80))
     return render(request, 'task1.html', {'books': mybooks})
 
 def task2(request):
@@ -126,7 +126,7 @@ def task2(request):
 def task3(request):
     mybooks = Book.objects.filter(
         Q(edition__lt=3) &
-        ~(Q(title__icontains='a') | Q(author__icontains='a'))
+        ~(Q(title__icontains='co') | Q(author__icontains='co'))
     )
     return render(request, 'task3.html', {'books': mybooks})
 

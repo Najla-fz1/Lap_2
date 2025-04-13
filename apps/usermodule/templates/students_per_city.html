@@ -6,22 +6,19 @@
     <title>Students Per City</title>
 </head>
 <body>
-    <h1>Number of Students in Each City</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>City</th>
-                <th>Number of Students</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for address in city_counts %}
-            <tr>
-                <td>{{ address.city }}</td>
-                <td>{{ address.student_count }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <h1>Student Count by City</h1>
+<table border="1">
+  <tr>
+    <th>City</th>
+    <th>Number of Students</th>
+  </tr>
+  {% for city in city_counts %}
+  <tr>
+    <td>{{ city.city }}</td>
+    <td>{{ city.student_count }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
 </body>
 </html>
