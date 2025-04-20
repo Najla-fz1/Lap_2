@@ -24,5 +24,11 @@ urlpatterns = [
     path('lab8/task3', views.task3),
     path('lab8/task4', views.task4),
     path('lab8/task5', views.task5),
+    # ////// lab 9
+    # path('delete-data/', views.delete_all_data),
+    path('lab9/task11', views.task11),
+    path('lab9/task22', views.task22),
+    path('lab9/task33', views.task33),
+    path('lab9/task44', views.task44),
 ]
 

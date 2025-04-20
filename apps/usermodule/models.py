@@ -8,3 +8,8 @@ class Student(models.Model):
     age = models.IntegerField()
     address = models.ForeignKey('Address', on_delete=models.CASCADE)
 
+
+
+
+
+

@@ -150,7 +150,48 @@ def task5(request):
 
 
 
+from .models import Department, Course, Student11 , Card
 
+
+
+def delete_all_data(request):
+    Book.objects.all().delete()
+    Department.objects.all().delete()
+    Course.objects.all().delete()
+    Card.objects.all().delete()
+    Student11.objects.all().delete()
+    return HttpResponse("تم حذف جميع البيانات بنجاح")
+
+
+
+# Task 1
+def task11(request):
+    departments = Department.objects.annotate(student_count=Count('student11'))
+    return render(request, 'task1.html', {'departments': departments})
+
+# Task 2
+def task22(request):
+    courses = Course.objects.annotate(student_count=Count('student11'))
+    return render(request, 'task2.html', {'courses': courses})
+
+# Task 3
+def task33(request):
+    departments = Department.objects.all()
+    result = []
+
+    for dept in departments:
+        student = Student11.objects.filter(student_Department=dept).order_by('id').first()
+        if student:
+            result.append((dept.name, student.name))
+
+    return render(request, 'task3.html', {'result': result})
+
+
+# Task 4
+def task44(request):
+    departments = Department.objects.annotate(student_count=Count('student11'))
+    departments = departments.filter(student_count__gt=2).order_by('-student_count')
+    return render(request, 'task4.html', {'departments': departments})
 
 
 

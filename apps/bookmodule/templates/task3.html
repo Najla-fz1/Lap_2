@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,4 +15,28 @@
         {% endfor %}
     </ul>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3 - Oldest Student</title>
+</head>
+<body>
+    <h2>Oldest Student by Department</h2>
+    <table border="1">
+        <tr>
+            <th>Department</th>
+            <th>Student</th>
+        </tr>
+        {% for dept, student in result %}
+        <tr>
+            <td>{{ dept }}</td>
+            <td>{{ student }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
 </html>
+
+
