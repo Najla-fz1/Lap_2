@@ -1,0 +1,28 @@
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Edition</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.price }}</td>
+            <td>{{ book.edition }}</td>
+            <td>
+                <a href="{% url 'editbook10' book.id %}">Edit</a>
+                <a href="{% url 'deletebook10' book.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'addbook10' %}">Add New Book</a>
+
+

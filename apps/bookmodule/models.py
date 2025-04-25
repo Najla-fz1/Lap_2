@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 class Book(models.Model):
     title = models.CharField(max_length=50)
@@ -21,4 +22,3 @@ class Student11(models.Model):
     student_Card = models.OneToOneField(Card, on_delete=models.PROTECT)
     student_Department = models.ForeignKey(Department, on_delete=models.CASCADE)
     student_Course = models.ManyToManyField(Course)
-
