@@ -1,0 +1,14 @@
+<h2>Students with Profiles</h2>
+
+<ul>
+    {% for profile in profiles %}
+        <li>
+            <strong>{{ profile.student.name }}</strong><br>
+            {% if profile.profile_image %}
+                <img src="{{ profile.profile_image.url }}" width="150" height="150">
+            {% else %}
+                No Image
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

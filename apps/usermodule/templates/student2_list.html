@@ -1,0 +1,19 @@
+<h2>Students List</h2>
+
+<a href="{% url 'student2_add' %}">Add New Student</a>
+
+<ul>
+    {% for student in students %}
+        <li>
+            {{ student.name }} -
+            Addresses:
+            {% for address in student.addresses.all %}
+                {{ address.street }}, {{ address.city }}{% if not forloop.last %} | {% endif %}
+            {% endfor %}
+            
+            <a href="{% url 'student2_edit' student.id %}">Edit</a>
+    
+            <a href="{% url 'student2_delete' student.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
