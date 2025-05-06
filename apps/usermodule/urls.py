@@ -16,5 +16,9 @@ urlpatterns = [
     #-----------------------------------------------------------------------------------------
     path('profile/add/', views.add_student_profile, name='add_student_profile'),
     path('profile/list/', views.list_student_profiles, name='list_student_profiles'),
-
+    #----------------- lab 12 --------------------------------
+    path('register/',views.register, name='register'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('home/', views.home, name='home'),
 ]
